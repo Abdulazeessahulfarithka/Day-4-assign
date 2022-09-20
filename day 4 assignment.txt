@@ -1,0 +1,32 @@
+QUESTION 1: USE THE REST COUNTRIES API URL TO DISPLAY ALL THE COUNTRIES FLAGS IN CONSOLE 
+
+
+var request=new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload=function(){
+  var result=JSON.parse(request.response);
+  for(var i=0;i<result.length;i++){
+    console.log(result[i].flags);
+  };
+}
+
+
+
+
+
+QUESTION 2: USE THE SAME REST COUNTRIES AND PRINT ALL NAME REGION,SUB REGION AND POPULATION
+
+ANSWER---
+
+var request=new XMLHttpRequest();
+request.open("GET","https://restcountries.com/v2/all");
+request.send();
+request.onload=function(){
+  var result=JSON.parse(request.response);
+  for(var i=0;i<result.length;i++){
+    console.log(result[i].region);
+    console.log(result[i].subregion);
+    console.log(result[i].population);
+  };
+}
